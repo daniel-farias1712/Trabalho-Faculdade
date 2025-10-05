@@ -1,0 +1,95 @@
+
+/* estilo.css - PsicOnline vFinal
+   Comentários: estilos principais, cores azul/roxo, layout responsivo */
+
+:root{
+  --prim:#2f4ec8;
+  --sec:#7b61d2;
+  --bg-grad: linear-gradient(135deg,#4b61c6,#7e57c2);
+  --card: rgba(255,255,255,0.06);
+  --text:#ffffff;
+  --muted: rgba(255,255,255,0.9);
+  --radius: 12px;
+  --gap: 14px;
+  --font: "Segoe UI", Arial, sans-serif;
+}
+
+/* Reset e fonte */
+*{box-sizing:border-box;margin:0;padding:0;font-family:var(--font)}
+
+/* Corpo: usar gradiente como fundo e garantir espaço para header/nav */
+body{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  background:var(--bg-grad);
+  color:var(--text);
+}
+
+/* Header fixo no topo com sombra leve */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 18px;
+  background:rgba(0,0,0,0.18);
+  backdrop-filter: blur(6px);
+}
+
+/* Marca */
+.brand{font-weight:700;font-size:1.25rem;padding-left:8px}
+
+/* Ações do header (tema + menu) */
+.header-actions{display:flex;gap:8px;align-items:center}
+#theme-toggle,#menu-toggle{background:none;border:none;color:var(--text);font-size:1.1rem;cursor:pointer}
+
+/* Nav: container dinâmico preenchido por script.js */
+.main-nav{padding:8px 18px;display:flex;justify-content:center;background:transparent}
+.main-nav .menu{list-style:none;display:flex;gap:8px;flex-wrap:wrap}
+.main-nav .menu a{padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--text);background:rgba(0,0,0,0.12)}
+
+/* HERO / landing */
+.hero{display:flex;align-items:center;justify-content:center;padding:40px 16px}
+.hero-card{max-width:920px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));padding:40px;border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,0.35);text-align:center}
+.hero-card h1{font-size:2.4rem;margin-bottom:6px}
+.subtitle{color:var(--muted);margin-bottom:20px}
+.hero-actions{display:flex;gap:12px;justify-content:center;margin-bottom:12px}
+.cta{display:inline-block;padding:14px 22px;border-radius:12px;text-decoration:none;font-weight:700}
+.btn-patient{background:linear-gradient(90deg,var(--prim),var(--sec));color:#fff}
+.btn-psych{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.12)}
+
+/* Forms e cards */
+.form-wrap{display:flex;justify-content:center;padding:28px}
+.form-card{background:var(--card);padding:22px;border-radius:12px;max-width:520px;width:100%;box-shadow:0 10px 30px rgba(0,0,0,0.25)}
+.form-card h2{margin-bottom:8px}
+.form-card label{display:block;margin-top:10px;margin-bottom:6px;color:var(--muted);font-size:0.95rem}
+input,select,textarea{width:100%;padding:12px;border-radius:8px;border:none;outline:none;font-size:0.95rem}
+.form-row{display:flex;gap:10px;align-items:center;margin-top:12px}
+.btn{display:inline-block;background:var(--prim);color:var(--text);padding:10px 14px;border-radius:8px;border:none;cursor:pointer;font-weight:600}
+.btn.outline{background:transparent;border:2px solid rgba(255,255,255,0.12)}
+.link{margin-left:auto;color:var(--muted);text-decoration:none;font-size:0.95rem}
+
+/* Conteúdo */
+.conteudo{max-width:780px;margin:20px auto;background:var(--card);padding:20px;border-radius:12px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.small{color:var(--muted);font-size:0.95rem}
+
+/* Rodapé */
+footer{padding:12px;text-align:center;background:transparent;font-size:0.9rem;margin-top:auto}
+
+/* Responsividade: menu hamburguer */
+.menu-toggle{display:none}
+@media(max-width:768px){
+  .menu-toggle{display:inline-block}
+  .main-nav .menu{display:none}
+  .main-nav.open .menu{display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px;background:rgba(0,0,0,0.14);border-radius:8px}
+  .hero-card{padding:24px}
+  .hero-actions{flex-direction:column}
+  .form-row{flex-direction:column}
+}
+
+/* Garante que o main tenha espaçamento para header fixo e nav */
+#main-content{padding-top:10px}

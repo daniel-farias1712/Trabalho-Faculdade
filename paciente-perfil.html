@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Psiagenda - Perfil Paciente</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-header-title">Psiagenda</div>
+      <nav class="app-header-nav">
+        <a href="paciente-gamificacao.html">Gamificação</a>
+        <a href="paciente-notificacoes.html">Notificações</a>
+        <a href="paciente-agenda-mes.html">Agendamento</a>
+        <a href="paciente-lista-psicologos.html">Psicólogos</a>
+        <a href="paciente-perfil.html" class="active">Perfil</a>
+        <a href="logout.html" class="btn btn-danger">Sair</a>
+      </nav>
+    </header>
+
+    <main class="app-main app-card-wide">
+      <!-- Formulário para salvar humor + texto -->
+      <form method="post" action="/api/humor-diario">
+        <!-- Bloco principal de dados -->
+        <div class="profile-block">
+          <p><strong>Fulano de Tal</strong></p>
+          <p>(xx) xxxxx-xxxx</p>
+          <p>E-mail: seu@exemplo.com</p>
+          <p>CPF: 000.000.000-00</p>
+          <p>Data de nascimento: 00/00/0000</p>
+        </div>
+
+        <!-- Barra de humor -->
+        <section class="mood-section" aria-label="Como você está se sentindo">
+          <div class="mood-question">
+            COMO VOCÊ ESTÁ SE SENTINDO
+          </div>
+
+          <div class="mood-options">
+            <button type="button" class="mood-item mood-raiva" data-mood="raiva" aria-label="Com raiva">😡</button>
+            <button type="button" class="mood-item mood-neutro" data-mood="neutro" aria-label="Neutro">😐</button>
+            <button type="button" class="mood-item mood-triste" data-mood="triste" aria-label="Triste">😭</button>
+            <button type="button" class="mood-item mood-feliz" data-mood="feliz" aria-label="Feliz">🙂</button>
+            <button type="button" class="mood-item mood-muito-feliz" data-mood="muito_feliz" aria-label="Muito feliz">😁</button>
+          </div>
+        </section>
+
+        <!-- Campo oculto que receberá a carinha escolhida -->
+        <input type="hidden" name="humor" id="humor">
+
+        <!-- Texto que o usuário escreve -->
+        <div class="profile-block">
+          <div class="form-group">
+            <label class="form-label" for="sobre_voce">
+              Conte um pouco sobre você, sua rotina e o que você espera da terapia.
+            </label>
+            <textarea
+              id="sobre_voce"
+              name="sobre_voce"
+              class="form-textarea"
+              placeholder="Escreva aqui sobre você, seu dia a dia e o que espera da terapia..."
+            ></textarea>
+          </div>
+          <p class="helper-text">
+            Esse texto pode ajudar o psicólogo a entender melhor sua situação.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">
+            Salvar registro de hoje
+          </button>
+        </div>
+      </form>
+
+      <div class="form-group">
+        <a href="modal-excluir-conta.html" class="btn btn-secondary">Excluir conta</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

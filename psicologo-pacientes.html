@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Psiagenda - Pacientes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-header-title">Psiagenda</div>
+      <nav class="app-header-nav" aria-label="Navegação principal do psicólogo">
+        <a href="psicologo-gamificacao.html">Gamificação</a>
+        <a href="psicologo-notificacoes.html">Notificações</a>
+        <a href="psicologo-agenda-mes.html">Agenda</a>
+        <a href="psicologo-pacientes.html" class="active">Pacientes</a>
+        <a href="psicologo-perfil.html">Perfil</a>
+        <a href="logout.html" class="btn btn-danger">Sair</a>
+      </nav>
+    </header>
+
+    <main class="app-main">
+      <header class="list-header">
+        <h1>Pacientes</h1>
+        <form class="search-form" role="search">
+          <label class="sr-only" for="busca-pacientes">Buscar pacientes</label>
+          <div class="search-input-wrapper">
+            <span class="search-icon">Q</span>
+            <input
+              id="busca-pacientes"
+              class="search-input"
+              type="search"
+              name="q"
+              placeholder="Pesquise por paciente"
+            >
+          </div>
+        </form>
+      </header>
+
+      <section class="list-grid" aria-label="Lista de pacientes">
+        <article class="card">
+          <h2 class="card-title">Averil McCloch</h2>
+          <div class="card-tag">Depressão</div>
+          <p class="card-meta">Visitas: 0</p>
+          <p class="card-meta">
+            <a class="link" href="psicologo-paciente-detalhe.html">Mais detalhes</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <h2 class="card-title">Abdominal Pain</h2>
+          <div class="card-tag">Ansiedade</div>
+          <p class="card-meta">Visitas: 0</p>
+          <p class="card-meta">
+            <a class="link" href="psicologo-paciente-detalhe.html">Mais detalhes</a>
+          </p>
+        </article>
+
+        <!-- Os demais pacientes serão renderizados pelo back-end -->
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Psiagenda - Consulta Marcada</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-header-title">Psiagenda</div>
+      <nav class="app-header-nav" aria-label="Navegação principal do paciente">
+        <a href="paciente-gamificacao.html">Gamificação</a>
+        <a href="paciente-notificacoes.html">Notificações</a>
+        <a href="paciente-agenda-mes.html" class="active">Agendamento</a>
+        <a href="paciente-lista-psicologos.html">Psicólogos</a>
+        <a href="paciente-perfil.html">Perfil</a>
+        <!-- Quando tiver back-end, essa âncora pode virar um POST /logout via outra tela/JS -->
+        <a href="logout.html" class="btn btn-danger">Sair</a>
+      </nav>
+    </header>
+
+    <main class="app-main app-card-wide">
+      <section class="day-header" aria-labelledby="titulo-dia">
+        <h2 id="titulo-dia">Terça</h2>
+        <span class="day-number">2</span>
+      </section>
+
+      <section class="appointment-details" aria-labelledby="titulo-consulta">
+        <h3 id="titulo-consulta">Consulta marcada</h3>
+        <p>Horário: 13:00 - 14:00</p>
+        <p>Psicólogo: Antônio</p>
+      </section>
+
+      <section class="time-slots" aria-label="Horários disponíveis">
+        <div class="time-slot">
+          <span>15:00 - 16:00</span>
+          <!-- No futuro, este botão pode abrir um fluxo de agendamento ou enviar um POST -->
+          <a href="paciente-confirmar-agendamento.html" class="btn btn-primary">
+            Marcar consulta
+          </a>
+        </div>
+      </section>
+
+      <div class="form-group">
+        <a href="paciente-agenda-mes.html" class="btn btn-secondary">Voltar</a>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <p>&copy; 2025 Psiagenda. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+</body>
+</html>

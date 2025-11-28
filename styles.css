@@ -1,0 +1,769 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f4f5f7;
+  color: #222;
+}
+
+/* ========== lAYOUTS centralizados (a maioria ) ========== */
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.app-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 420px;
+  padding: 32px 28px;
+}
+
+.app-card-wide {
+  max-width: 960px;
+}
+
+.app-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #111827;
+}
+
+.app-subtitle {
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+/* ==========FOrmularios ========== */
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+  color: #444;
+  font-weight: 500;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ========== BOtoes ========== */
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.1s;
+  font-weight: 500;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background-color: #4f46e5;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #4338ca;
+}
+
+.btn-secondary {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.btn-secondary:hover {
+  background-color: #d1d5db;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #4f46e5;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link {
+  color: #4f46e5;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* ========== A navetação superior das paginas  ========== */
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f5f7;
+}
+
+.app-header {
+  background-color: #4f46e5;
+  color: #ffffff;
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.app-header-title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.app-header-nav {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.app-header-nav a {
+  color: #e0e7ff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.app-header-nav a:hover {
+  color: #ffffff;
+}
+
+.app-header-nav a.active {
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.app-main {
+  flex: 1;
+  padding: 32px 40px 48px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.app-main h1 {
+  font-size: 26px;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.app-main h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #374151;
+}
+
+/* ========== Lista apenas para teste (lembrar de rever isso )========== */
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  width: 280px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 9px 12px;
+  padding-left: 32px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  padding: 14px 16px;
+  font-size: 14px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.card-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #111827;
+}
+
+.card-tag {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.card-meta {
+  font-size: 13px;
+  color: #374151;
+  margin-top: 4px;
+}
+
+/* ========== Calendario mensal ========== */
+
+.calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-color {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid #d1d5db;
+}
+
+.legend-trabalho {
+  background-color: #4ade80;
+}
+
+.legend-ferias {
+  background-color: #f97316;
+}
+
+.legend-consulta {
+  background-color: #3b82f6;
+}
+
+.calendar {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.calendar th,
+.calendar td {
+  border: 1px solid #e5e7eb;
+  padding: 12px 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.calendar th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.calendar td {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.calendar td:hover {
+  background-color: #f9fafb;
+}
+
+.calendar-day-trabalho {
+  background-color: #d1fae5;
+}
+
+.calendar-day-ferias {
+  background-color: #fed7aa;
+}
+
+.calendar-day-consulta {
+  background-color: #dbeafe;
+}
+
+/* ========== Agenda diaria========== */
+
+.day-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.day-header h2 {
+  font-size: 24px;
+  color: #111827;
+}
+
+.day-header span {
+  font-size: 18px;
+  color: #6b7280;
+}
+
+.time-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.time-slot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 12px 16px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  transition: box-shadow 0.2s;
+}
+
+.time-slot:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.time-slot span {
+  font-weight: 500;
+  color: #374151;
+}
+
+/* ========== NOtificações ========== */
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.notification-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  padding: 14px 16px;
+  font-size: 14px;
+  transition: box-shadow 0.2s;
+}
+
+.notification-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.notification-item p {
+  margin-bottom: 4px;
+  color: #374151;
+}
+
+.notification-item p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========== Dinamicas  ========== */
+
+.dynamics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dynamic-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  padding: 14px 16px;
+  font-size: 14px;
+  transition: box-shadow 0.2s;
+}
+
+.dynamic-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.dynamic-item p {
+  margin-bottom: 4px;
+  color: #374151;
+}
+
+.dynamic-item strong {
+  color: #111827;
+}
+
+/* ========== MOdais simulados (mockito) ========== */
+
+.modal-wrapper {
+  min-height: 100vh;
+  background-color: rgba(15, 23, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.modal-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px 28px 20px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.3);
+}
+
+.modal-title {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+.modal-text {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* ========== Perfil basico para testes ========== */
+
+.profile-block {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.profile-block p {
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+.profile-block p:last-child {
+  margin-bottom: 0;
+}
+
+.profile-block strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+/* ========== Texto de complemento ========== */
+
+.helper-text {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+/* ========== Pra ficar bom em celular  ========== */
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 20px;
+  }
+
+  .app-header-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .app-main {
+    padding: 24px 16px;
+  }
+
+  .list-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-input-wrapper {
+    width: 100%;
+  }
+
+  .list-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .time-slot {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}
+
+
+/* ========== Estilo doos botões  ========== */
+/* Botão de perigo (vermelho) */
+.btn-danger {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #ffffff;
+  border: 1px solid rgba(220, 38, 38, 0.6);
+  box-shadow: 0 8px 18px rgba(220, 38, 38, 0.35);
+}
+.btn-danger:hover {
+  filter: brightness(1.02);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(220, 38, 38, 0.45);
+}
+.btn-danger:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.4);
+}
+
+/* parra a consulta */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.badge-confirmada {
+  background-color: #dcfce7;     /* verde claro */
+  color: #166534;                 /* verde escuro */
+  border-color: #86efac;
+}
+
+.badge-cancelada {
+  background-color: #fee2e2;     /* vermelho claro */
+  color: #991b1b;                 /* vermelho escuro */
+  border-color: #fca5a5;
+}
+
+/* ========== Perfil com avatar e edições ========== */
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  padding: 20px 24px;              /* maior */
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.profile-avatar {
+  width: 72px;                     /* maior */
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e5e7eb, #f9fafb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-size: 30px;                 /* ícone maior */
+}
+
+.avatar-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #e5e7eb;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 20px;                 /* maior */
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.profile-field {
+  font-size: 15px;                 /* maior */
+  color: #374151;
+  margin-bottom: 2px;
+}
+
+.icon-edit {
+  margin-left: 6px;
+  font-size: 13px;
+  color: #4f46e5;
+  cursor: pointer;
+}
+
+.icon-phone {
+  margin-right: 6px;
+  font-size: 15px;
+}
+
+/* ========== Barra de humor (emojis) ========== */
+
+.mood-section {
+  background-color: #e0f2fe;
+  border-radius: 999px;
+  padding: 18px 28px;              /* maior */
+  margin-bottom: 20px;
+  text-align: center;              /* texto + emojis centralizados */
+}
+
+.mood-question {
+  display: block;                  /* linha própria */
+  font-size: 14px;                 /* maior */
+  font-weight: 600;
+  color: #111827;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;             /* espaço entre texto e emojis */
+}
+
+.mood-options {
+  display: flex;
+  justify-content: center;
+  gap: 16px;                       /* mais espaço entre emojis */
+}
+
+.mood-item {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 28px;                 /* emojis maiores */
+  line-height: 1;
+  transition: transform 0.15s, filter 0.15s;
+}
+
+.mood-item:hover {
+  transform: translateY(-2px) scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* estado selecionado (quando tiver back-end/JS) */
+.mood-item.mood-selected {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.6));
+}
+
+/* Notificações por tipo */
+.notif-marcada {
+  background-color: #dcfce7;   /* verde claro */
+  border-color: #22c55e;
+}
+
+.notif-desmarcada {
+  background-color: #fee2e2;   /* vermelho claro */
+  border-color: #ef4444;
+}
+
+.notif-alterada {
+  background-color: #fef9c3;   /* amarelo claro */
+  border-color: #eab308;
+}

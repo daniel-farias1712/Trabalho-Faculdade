@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Psiagenda - Agenda Dia Psicólogo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-header-title">Psiagenda</div>
+      <nav class="app-header-nav" aria-label="Navegação principal do psicólogo">
+        <a href="psicologo-gamificacao.html">Gamificação</a>
+        <a href="psicologo-notificacoes.html">Notificações</a>
+        <a href="psicologo-agenda-mes.html" class="active">Agenda</a>
+        <a href="psicologo-pacientes.html">Pacientes</a>
+        <a href="psicologo-perfil.html">Perfil</a>
+        <a href="logout.html" class="btn btn-danger">Sair</a>
+      </nav>
+    </header>
+
+    <main class="app-main app-card-wide">
+      <section class="day-header" aria-labelledby="titulo-dia-config">
+        <h2 id="titulo-dia-config">Terça</h2>
+        <span class="day-number">2</span>
+      </section>
+
+      <p class="helper-text">
+        Defina seus horários de atendimento para este dia. Você pode remover ou adicionar faixas de horário.
+      </p>
+
+      <section class="time-slots" aria-label="Horários de atendimento">
+        <div class="time-slot">
+          <span>13:00 - 14:00</span>
+          <button class="btn btn-secondary" type="button" aria-label="Remover horário 13:00 até 14:00">
+            X
+          </button>
+        </div>
+        <div class="time-slot">
+          <span>14:00 - 15:00</span>
+          <button class="btn btn-secondary" type="button" aria-label="Remover horário 14:00 até 15:00">
+            X
+          </button>
+        </div>
+        <div class="time-slot">
+          <span>15:00 - 16:00</span>
+          <button class="btn btn-secondary" type="button" aria-label="Remover horário 15:00 até 16:00">
+            X
+          </button>
+        </div>
+      </section>
+
+      <div class="form-group">
+        <button class="btn btn-primary" type="button">
+          Habilitar dia como ATIVO
+        </button>
+        <button class="btn btn-secondary" type="button">
+          Habilitar dia como INATIVO
+        </button>
+      </div>
+
+      <div class="form-group">
+        <a href="psicologo-agenda-mes.html" class="btn btn-secondary">Voltar</a>
+        <button class="btn btn-primary" type="button" aria-label="Adicionar novo horário">
+          +
+        </button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

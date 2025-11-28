@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Psiagenda - Detalhe da Consulta</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-header-title">Psiagenda</div>
+      <nav class="app-header-nav" aria-label="Navegação principal do paciente">
+        <a href="paciente-gamificacao.html">Gamificação</a>
+        <a href="paciente-notificacoes.html">Notificações</a>
+        <a href="paciente-agenda-mes.html" class="active">Agendamento</a>
+        <a href="paciente-lista-psicologos.html">Psicólogos</a>
+        <a href="paciente-perfil.html">Perfil</a>
+        <a href="logout.html" class="btn btn-danger">Sair</a>
+      </nav>
+    </header>
+
+    <main class="app-main app-card-wide">
+      <section class="day-header" aria-labelledby="titulo-dia">
+        <h2 id="titulo-dia">Terça</h2>
+        <span class="day-number">2</span>
+      </section>
+
+      <section class="appointment-details" aria-labelledby="titulo-consulta">
+        <h3 id="titulo-consulta">Consulta</h3>
+        <p><strong>Paciente:</strong> Maria</p>
+        <p><strong>Horário:</strong> 13:00 - 14:00</p>
+      </section>
+
+      <section class="profile-block" aria-labelledby="titulo-outros-psicologos">
+        <h3 id="titulo-outros-psicologos">Outros psicólogos disponíveis</h3>
+        <p>Pablo</p>
+        <p>João</p>
+      </section>
+
+      <div class="form-group">
+        <!-- No futuro, esse botão pode levar a uma tela/rota de confirmação de cancelamento -->
+        <a href="paciente-confirmar-cancelamento.html" class="btn btn-primary">
+          Cancelar consulta
+        </a>
+      </div>
+
+      <div class="form-group">
+        <a href="paciente-agenda-mes.html" class="btn btn-secondary">Voltar</a>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <p>&copy; 2025 Psiagenda. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+</body>
+</html>

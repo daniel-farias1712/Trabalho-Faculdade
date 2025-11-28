@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Psiagenda - Psicólogo Antônio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-header-title">Psiagenda</div>
+      <nav class="app-header-nav" aria-label="Navegação principal do paciente">
+        <a href="paciente-gamificacao.html">Gamificação</a>
+        <a href="paciente-notificacoes.html">Notificações</a>
+        <a href="paciente-agenda-mes.html">Agendamento</a>
+        <a href="paciente-lista-psicologos.html" class="active">Psicólogos</a>
+        <a href="paciente-perfil.html">Perfil</a>
+        <a href="logout.html" class="btn btn-danger">Sair</a>
+      </nav>
+    </header>
+
+    <main class="app-main app-card-wide">
+      <section class="profile-block" aria-labelledby="titulo-psicologo">
+        <h1 id="titulo-psicologo">Psicólogo: Antônio</h1>
+        <p><strong>Telefone:</strong> (xx) xxxxx-xxxx</p>
+        <p><strong>CRP:</strong> XX/XXXXXX</p>
+        <p><strong>Especialidade:</strong> xxxxxx</p>
+        <p><strong>Localização:</strong> xxxxxxxxxxxxxxx</p>
+        <p>
+          <strong>Sobre:</strong>
+          Estudei na faculdade X e adquiri experiência em atendimento clínico.
+        </p>
+        <p><strong>Valor:</strong> xxxx / hora</p>
+      </section>
+
+      <section class="form-group" aria-label="Formas de pagamento">
+        <button class="btn btn-secondary" type="button">Cartão</button>
+        <button class="btn btn-secondary" type="button">Pix</button>
+        <button class="btn btn-secondary" type="button">Boleto</button>
+      </section>
+
+      <div class="form-group">
+        <a href="paciente-agenda-mes.html" class="btn btn-primary">
+          Agendar consulta
+        </a>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <p>&copy; 2025 Psiagenda. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+</body>
+</html>

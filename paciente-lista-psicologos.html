@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Psiagenda - Psicólogos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-header-title">Psiagenda</div>
+      <nav class="app-header-nav" aria-label="Navegação principal do paciente">
+        <a href="paciente-gamificacao.html">Gamificação</a>
+        <a href="paciente-notificacoes.html">Notificações</a>
+        <a href="paciente-agenda-mes.html">Agendamento</a>
+        <a href="paciente-lista-psicologos.html" class="active">Psicólogos</a>
+        <a href="paciente-perfil.html">Perfil</a>
+        <a href="logout.html" class="btn btn-danger">Sair</a>
+      </nav>
+    </header>
+
+    <main class="app-main">
+      <header class="list-header">
+        <h1>Psicólogos</h1>
+        <form class="search-form" role="search">
+          <label class="sr-only" for="busca-psicologos">Buscar psicólogos</label>
+          <div class="search-input-wrapper">
+            <span class="search-icon">Q</span>
+            <input
+              id="busca-psicologos"
+              class="search-input"
+              type="search"
+              placeholder="Pesquise por psicólogo"
+              name="q"
+            >
+          </div>
+        </form>
+      </header>
+
+      <section class="list-grid" aria-label="Lista de psicólogos disponíveis">
+        <article class="card">
+          <h2 class="card-title">Antônio</h2>
+          <div class="card-tag">Especialidade: xxxxxxx</div>
+          <p class="card-meta">Telefone: (xx) xxxxx-xxxx</p>
+          <p class="card-meta">
+            Estudei na faculdade X e me especializei em xxxxxxxxxx.
+          </p>
+          <p class="card-meta">Localização: xxxxxxxxxxxxx</p>
+          <p class="card-meta">CRP: XX/XXXXXX</p>
+          <p class="card-meta">Valor: R$ xx,xx</p>
+          <p class="card-meta">
+            <a class="link" href="paciente-detalhe-psicologo.html">Ver detalhes</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <h2 class="card-title">Oran Cabole</h2>
+          <div class="card-tag">Especialidade: xxxxxxx</div>
+          <p class="card-meta">Telefone: (xx) xxxxx-xxxx</p>
+          <p class="card-meta">Localização: xxxxxxxxxx</p>
+          <p class="card-meta">CRP: XX/XXXXXX</p>
+          <p class="card-meta">Valor: R$ xx,xx</p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>&copy; 2025 Psiagenda. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+</body>
+</html>

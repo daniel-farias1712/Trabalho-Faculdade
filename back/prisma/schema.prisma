@@ -1,0 +1,207 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         Int        @id @default(autoincrement())
+  email      String     @unique
+  senhaHash  String
+  tipo       UserTipo   // "PACIENTE" ou "PSICOLOGO"
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+
+  paciente   Paciente?
+  psicologo  Psicologo?
+}
+
+enum UserTipo {
+  PACIENTE
+  PSICOLOGO
+}
+
+model Paciente {
+  id             Int        @id @default(autoincrement())
+  userId         Int        @unique
+  nomeCompleto   String
+  telefone       String
+  cpf            String     @unique
+  dataNascimento DateTime
+  queixaPrincipal String?
+  sobreVoce      String?
+
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+
+  user           User       @relation(fields: [userId], references: [id])
+  humores        Humor[]
+  consultas      Consulta[]
+  dinamicas      DinamicaPaciente[]
+  anotacoes      AnotacaoPsicologo[]
+  notificacoes   Notificacao[]   // <-- ADICIONE ESTA LINHA
+}
+
+
+model Psicologo {
+  id                Int        @id @default(autoincrement())
+  userId            Int        @unique
+  nomeCompleto      String
+  telefone          String
+  crp               String     @unique
+  especialidade     String?
+  localizacao       String?
+  bio               String?
+  valorConsultaHora Decimal?   @db.Decimal(10,2)
+  videoUrl          String?    // video-apresentacao
+
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+
+  user              User       @relation(fields: [userId], references: [id])
+  disponibilidades  Disponibilidade[]
+  consultas         Consulta[]
+  notificacoes      Notificacao[]
+  dinamicas         Dinamica[]
+  anotacoes         AnotacaoPsicologo[]
+}
+
+model Disponibilidade {
+  id          Int             @id @default(autoincrement())
+  psicologoId Int
+  data        DateTime        // só data (tratar hora como 00:00)
+  statusDia   StatusDia       // ATIVO, INATIVO, FERIAS
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  psicologo   Psicologo       @relation(fields: [psicologoId], references: [id])
+  slots       DisponibilidadeSlot[]
+}
+
+enum StatusDia {
+  ATIVO
+  INATIVO
+  FERIAS
+}
+
+model DisponibilidadeSlot {
+  id               Int             @id @default(autoincrement())
+  disponibilidadeId Int
+  horaInicio       DateTime        // usar só hora, data igual a Disponibilidade.data
+  horaFim          DateTime
+  ativo            Boolean         @default(true)
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+
+  disponibilidade  Disponibilidade @relation(fields: [disponibilidadeId], references: [id])
+  consultas        Consulta[]
+}
+
+model Consulta {
+  id               Int        @id @default(autoincrement())
+  psicologoId      Int
+  pacienteId       Int
+  slotId           Int?       // opcional: vincular ao slot de disponibilidade
+  data             DateTime   // dia da consulta
+  horaInicio       DateTime
+  horaFim          DateTime
+  status           StatusConsulta
+  motivoCancelamento String?
+
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+
+  psicologo        Psicologo  @relation(fields: [psicologoId], references: [id])
+  paciente         Paciente   @relation(fields: [pacienteId], references: [id])
+  slot             DisponibilidadeSlot? @relation(fields: [slotId], references: [id])
+}
+
+enum StatusConsulta {
+  AGENDADA
+  CONFIRMADA
+  CANCELADA_PACIENTE
+  CANCELADA_PSICOLOGO
+  REAGENDADA
+}
+
+model Humor {
+  id          Int      @id @default(autoincrement())
+  pacienteId  Int
+  mood        MoodTipo
+  texto       String?
+  createdAt   DateTime @default(now())
+
+  paciente    Paciente @relation(fields: [pacienteId], references: [id])
+}
+
+enum MoodTipo {
+  RAIVA
+  NEUTRO
+  TRISTE
+  FELIZ
+  MUITO_FELIZ
+}
+
+model Notificacao {
+  id          Int            @id @default(autoincrement())
+  psicologoId Int
+  pacienteId  Int?
+  tipo        TipoNotificacao
+  mensagem    String
+  dataEvento  DateTime?
+  lida        Boolean        @default(false)
+  createdAt   DateTime       @default(now())
+
+  psicologo   Psicologo      @relation(fields: [psicologoId], references: [id])
+  paciente    Paciente?      @relation(fields: [pacienteId], references: [id])
+}
+
+enum TipoNotificacao {
+  CONSULTA_MARCADA
+  CONSULTA_CANCELADA
+  CONSULTA_REAGENDADA
+}
+
+model Dinamica {
+  id          Int        @id @default(autoincrement())
+  psicologoId Int
+  titulo      String
+  descricao   String?
+  ativo       Boolean    @default(true)
+  createdAt   DateTime   @default(now())
+
+  psicologo   Psicologo  @relation(fields: [psicologoId], references: [id])
+  pacientes   DinamicaPaciente[]
+}
+
+model DinamicaPaciente {
+  id          Int        @id @default(autoincrement())
+  dinamicaId  Int
+  pacienteId  Int
+  status      StatusDinamica
+  pontuacao   Int?       // opcional
+  updatedAt   DateTime   @default(now())
+
+  dinamica    Dinamica   @relation(fields: [dinamicaId], references: [id])
+  paciente    Paciente   @relation(fields: [pacienteId], references: [id])
+}
+
+enum StatusDinamica {
+  PENDENTE
+  EM_ANDAMENTO
+  CONCLUIDA
+}
+
+model AnotacaoPsicologo {
+  id          Int        @id @default(autoincrement())
+  psicologoId Int
+  pacienteId  Int
+  texto       String
+  createdAt   DateTime   @default(now())
+
+  psicologo   Psicologo  @relation(fields: [psicologoId], references: [id])
+  paciente    Paciente   @relation(fields: [pacienteId], references: [id])
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Psiagenda - Perfil Psicólogo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-header-title">Psiagenda</div>
+      <nav class="app-header-nav" aria-label="Navegação principal do psicólogo">
+        <a href="psicologo-gamificacao.html">Gamificação</a>
+        <a href="psicologo-notificacoes.html">Notificações</a>
+        <a href="psicologo-agenda-mes.html">Agenda</a>
+        <a href="psicologo-pacientes.html">Pacientes</a>
+        <a href="psicologo-perfil.html" class="active">Perfil</a>
+        <a href="logout.html" class="btn btn-danger">Sair</a>
+      </nav>
+    </header>
+
+    <main class="app-main app-card-wide">
+      <!-- Vídeo de apresentação -->
+      <section class="profile-block" aria-label="Vídeo de apresentação">
+        <p><strong>Vídeo de apresentação</strong></p>
+        <video
+          controls
+          width="100%"
+          style="max-width: 480px; margin-top: 8px; border-radius: 8px;"
+        >
+          <source src="video-apresentacao.mp4" type="video/mp4">
+          Seu navegador não suporta o elemento de vídeo.
+        </video>
+      </section>
+
+      <!-- Dados do psicólogo -->
+      <section class="profile-block" aria-label="Dados do psicólogo">
+        <p><strong>Antonio</strong></p>
+        <p>(xx) xxxxx-xxxx</p>
+        <p>CRP: XX/XXXXXX</p>
+        <p>Especialidade: xxxxxx</p>
+        <p>Localização: xxxxxxxxxxxxxx</p>
+        <p>Estudei na faculdade X e adquiri experiência em Y.</p>
+        <p>Valor da consulta: R$ xxx,xx por hora</p>
+      </section>
+
+      <!-- Ações (para futuro back-end) -->
+      <div class="form-group">
+        <button class="btn btn-secondary" type="button">Editar dados</button>
+        <button class="btn btn-secondary" type="button">Editar especialidades</button>
+        <button class="btn btn-secondary" type="button">Editar valores</button>
+        <button class="btn btn-primary" type="button">Adicionar / trocar vídeo</button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

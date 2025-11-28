@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Psiagenda - Agenda do Paciente (mês)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-header-title">Psiagenda</div>
+      <nav class="app-header-nav" aria-label="Navegação principal do paciente">
+        <a href="paciente-gamificacao.html">Gamificação</a>
+        <a href="paciente-notificacoes.html">Notificações</a>
+        <a href="paciente-agenda-mes.html" class="active">Agendamento</a>
+        <a href="paciente-lista-psicologos.html">Psicólogos</a>
+        <a href="paciente-perfil.html">Perfil</a>
+        <a href="logout.html" class="btn btn-danger">Sair</a>
+      </nav>
+    </header>
+
+    <main class="app-main">
+      <h1>Antônio</h1>
+      <h2 style="margin-top: 8px;">Janeiro</h2>
+
+      <div class="calendar-legend" style="margin-top: 12px;">
+        <div class="legend-item">
+          <span class="legend-color legend-trabalho"></span>
+          <span>Dias disponíveis</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color legend-ferias"></span>
+          <span>Dias indisponíveis</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-color legend-consulta"></span>
+          <span>Dias com consulta</span>
+        </div>
+      </div>
+
+      <table class="calendar">
+        aption>Agenda mensal do psicólogo selecionado</caption>
+        <thead>
+          <tr>
+            <th scope="col">S</th>
+            <th scope="col">T</th>
+            <th scope="col">Q</th>
+            <th scope="col">Q</th>
+            <th scope="col">S</th>
+            <th scope="col">S</th>
+            <th scope="col">D</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="calendar-day-trabalho">1</td>
+            <td class="calendar-day-trabalho">2</td>
+            <td class="calendar-day-trabalho">3</td>
+            <td class="calendar-day-trabalho">4</td>
+            <td class="calendar-day-trabalho">5</td>
+            <td class="calendar-day-trabalho">6</td>
+            <td class="calendar-day-trabalho">7</td>
+          </tr>
+          <tr>
+            <td class="calendar-day-ferias">8</td>
+            <td class="calendar-day-ferias">9</td>
+            <td class="calendar-day-ferias">10</td>
+            <td class="calendar-day-ferias">11</td>
+            <td class="calendar-day-ferias">12</td>
+            <td class="calendar-day-ferias">13</td>
+            <td class="calendar-day-ferias">14</td>
+          </tr>
+          <tr>
+            <td class="calendar-day-consulta">15</td>
+            <td class="calendar-day-consulta">16</td>
+            <td class="calendar-day-consulta">17</td>
+            <td class="calendar-day-consulta">18</td>
+            <td class="calendar-day-consulta">19</td>
+            <td class="calendar-day-consulta">20</td>
+            <td class="calendar-day-consulta">21</td>
+          </tr>
+          <tr>
+            <td><a href="paciente-agenda-dia.html">22</a></td>
+            <td><a href="paciente-agenda-dia.html">23</a></td>
+            <td><a href="paciente-agenda-dia.html">24</a></td>
+            <td><a href="paciente-agenda-dia.html">25</a></td>
+            <td><a href="paciente-agenda-dia.html">26</a></td>
+            <td><a href="paciente-agenda-dia.html">27</a></td>
+            <td><a href="paciente-agenda-dia.html">28</a></td>
+          </tr>
+          <tr>
+            <td><a href="paciente-agenda-dia.html">29</a></td>
+            <td><a href="paciente-agenda-dia.html">30</a></td>
+            <td><a href="paciente-agenda-dia.html">31</a></td>
+            <td colspan="4"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="helper-text">
+        Clique em um dia disponível para marcar.
+      </p>
+    </main>
+
+    <footer class="app-footer">
+      <p>&copy; 2025 Psiagenda. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+</body>
+</html>
